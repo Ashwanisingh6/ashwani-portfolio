@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050508;
+    --bg-secondary: #0a0a12;
+    --bg-card: rgba(15, 15, 25, 0.7);
+    --bg-card-hover: rgba(24, 20, 38, 0.85);
+    --accent-purple: #a855f7;
+    --accent-purple-glow: rgba(168, 85, 247, 0.35);
+    --accent-violet: #8b5cf6;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-subtle: rgba(168, 85, 247, 0.15);
+    --border-strong: rgba(168, 85, 247, 0.4);
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html.light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-card-hover: rgba(255, 255, 255, 0.98);
+    --accent-purple: #7e22ce;
+    --accent-purple-glow: rgba(126, 34, 206, 0.2);
+    --accent-violet: #6d28d9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-subtle: rgba(126, 34, 206, 0.18);
+    --border-strong: rgba(126, 34, 206, 0.45);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 10px 30px -10px var(--accent-purple-glow);
+}
+
+.glass-nav {
+  background: rgba(8, 8, 14, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+html.light .glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(126, 34, 206, 0.18);
+}
+
+/* Luxury purple text gradient */
+.text-gradient-purple {
+  background: linear-gradient(135deg, #ffffff 20%, #d8b4fe 60%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .text-gradient-purple {
+  background: linear-gradient(135deg, #0f172a 20%, #6b21a8 70%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-electric {
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle glow effect */
+.glow-purple-sm {
+  box-shadow: 0 0 20px -5px rgba(168, 85, 247, 0.3);
+}
+
+.glow-purple-lg {
+  box-shadow: 0 0 50px -10px rgba(168, 85, 247, 0.35);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.6);
+}
+
+/* Accessible focus outline */
+*:focus-visible {
+  outline: 2px solid #a855f7;
+  outline-offset: 3px;
+}
